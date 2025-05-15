@@ -1,0 +1,8 @@
+en:
+  books:
+    create:
+      notice: "Book was successfully created."
+    update:
+      notice: "Book was successfully updated."
+    destroy:
+      notice: "Book was successfully destroyed."
