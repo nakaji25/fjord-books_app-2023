@@ -1,0 +1,17 @@
+en:
+  books:
+    index:
+      title: "Books"
+      show: "Show this book"
+      new: "New book"
+    show:
+      edit: "Edit this book"
+      back: "Back to books"
+      destroy: "Destroy this book"
+    edit:
+      title: "Editing book"
+      show: "Show this book"
+      back: "Back to books"
+    new:
+      title: "New book"
+      back: "Back to books"
