@@ -1,17 +1,10 @@
 ja:
-  books:
-    index:
-      title: "本一覧"
-      show: "本の詳細"
-      new: "本を追加"
-    show:
-      edit: "編集"
-      back: "戻る"
-      destroy: "削除"
-    edit:
-      title: "編集"
-      show: "詳細に戻る"
-      back: "一覧に戻る"
-    new:
-      title: "新規追加"
-      back: "戻る"
+  common:
+    index_title: "%{name}一覧"
+    new_title: "%{name}を新規追加"
+    edit_title: "%{name}の編集"
+    new: "%{name}を追加"
+    edit: "%{name}を編集"
+    show: "%{name}の詳細"
+    back: "%{name}一覧に戻る"
+    destroy: "%{name}を削除"

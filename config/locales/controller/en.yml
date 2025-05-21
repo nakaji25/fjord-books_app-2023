@@ -1,8 +1,5 @@
 en:
-  books:
-    create:
-      notice: "Book was successfully created."
-    update:
-      notice: "Book was successfully updated."
-    destroy:
-      notice: "Book was successfully destroyed."
+  common:
+    create_notice: "%{name} was successfully created."
+    update_notice: "%{name} was successfully updated."
+    destroy_notice: "%{name} was successfully destroyed."

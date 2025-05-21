@@ -82,4 +82,4 @@ end
 
 gem 'carrierwave'
 
-gem 'rails-i18n', '~> 7.0.6'
+gem 'rails-i18n'

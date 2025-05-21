@@ -1,8 +1,5 @@
 ja:
-  books:
-    create:
-      notice: "本の追加に成功しました。"
-    update:
-      notice: "本の更新に成功しました。"
-    destroy:
-      notice: "本の削除に成功しました。"
+  common:
+    create_notice: "%{name}の追加に成功しました。"
+    update_notice: "%{name}の更新に成功しました。"
+    destroy_notice: "%{name}の削除に成功しました。"

@@ -287,7 +287,7 @@ DEPENDENCIES
   jbuilder
   puma
   rails (~> 7.0.6)
-  rails-i18n (~> 7.0.6)
+  rails-i18n
   rubocop (~> 1.45.1)
   rubocop-fjord
   rubocop-rails
