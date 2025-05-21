@@ -40,6 +40,7 @@ ja:
       sign_up: 会員登録
       login: ログイン
       logged_in_as: ログイン中のアカウント
+      users: ユーザー一覧
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
@@ -139,6 +140,7 @@ ja:
         sign_up: アカウント登録
       minimum_password_length:
         other: "（%{count}字以上）"
+        one: "（%{count}字以上）"
     unlocks:
       new:
         resend_unlock_instructions: アカウントのロック解除方法を再送する
@@ -154,3 +156,4 @@ ja:
       not_locked: はロックされていません。
       not_saved:
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+        one: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
