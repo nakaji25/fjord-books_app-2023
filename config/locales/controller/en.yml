@@ -1,5 +1,0 @@
-en:
-  common:
-    create_notice: "%{name} was successfully created."
-    update_notice: "%{name} was successfully updated."
-    destroy_notice: "%{name} was successfully destroyed."

@@ -9,3 +9,18 @@ en:
         memo: Memo
         picture: Picture
         title: Title
+  views:
+    common:
+      index_title: "%{name}"
+      new_title: "New %{name}"
+      edit_title: "Editing %{name}"
+      new: "New %{name}"
+      edit: "Edit this %{name}"
+      show: "Show this %{name}"
+      back: "Back to %{name}"
+      destroy: "Destroy this %{name}"
+  controllers:
+    common:
+      create_notice: "%{name} was successfully created."
+      update_notice: "%{name} was successfully updated."
+      destroy_notice: "%{name} was successfully destroyed."
