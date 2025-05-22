@@ -10,7 +10,7 @@
     <%= user.name %>
   </p>
 
-  <% if user.icon.attached? && user.icon.persisted?%>
+  <% if user.icon.attached? && user.icon.persisted? %>
     <p>
       <strong><%= User.human_attribute_name(:icon) %>:</strong>
       <%= image_tag user.icon.variant(:thumb) %>
