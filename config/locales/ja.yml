@@ -200,8 +200,6 @@ ja:
       previous: '‹ 前'
       next: '次 ›'
       truncate: '…'
-    users:
-      show: "%{name}を表示"
   controllers:
     common:
       notice_create: "%{name}が作成されました。"

@@ -1,7 +1,6 @@
 <h1><%= t('views.common.title_index', name: i18n_pluralize(Book.model_name.human)) %></h1>
 
 <div id="books" class="index-items">
-
   <% @books.each do |book| %>
     <div class="index-item">
       <%= render book %>
@@ -15,5 +14,5 @@
 <%= paginate @books %>
 
 <nav class="page-nav">
-  <%= link_to t('views.common.new', name: Book.model_name.human.downcase), new_book_path %>
+    <%= link_to t('views.common.new', name: Book.model_name.human.downcase), new_book_path %>
 </nav>
