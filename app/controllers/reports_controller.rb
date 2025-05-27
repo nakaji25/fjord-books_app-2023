@@ -1,9 +1,10 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[ show edit update destroy ]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /reports or /reports.json
   def index
-    @reports = Report.all
+    @reports = Report.order(:id).page(params[:page])
   end
 
   # GET /reports/1 or /reports/1.json
@@ -66,5 +67,12 @@ class ReportsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def report_params
       params.require(:report).permit(:user_id, :title, :contents)
+    end
+
+    def correct_user
+      unless @report.user == current_user
+        flash[:alert] = '権限がありません。'
+        redirect_to root_url
+      end
     end
 end
