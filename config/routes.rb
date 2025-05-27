@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    passwords: 'users/passwords'
-  }
+  devise_for :users
   resources :users
   resources :books
   root 'books#index'

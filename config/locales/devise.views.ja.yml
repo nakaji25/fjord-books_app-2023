@@ -33,14 +33,6 @@ ja:
       user:
         one: ユーザー情報
         other: ユーザー情報
-  layouts:
-    application:
-      edit_profile: プロフィール編集
-      logout: ログアウト
-      sign_up: 会員登録
-      login: ログイン
-      logged_in_as: ログイン中のアカウント
-      users: ユーザー一覧
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
@@ -136,6 +128,7 @@ ja:
         didn_t_receive_unlock_instructions: アカウントのロック解除方法のメールを受け取っていませんか？
         forgot_your_password: パスワードを忘れましたか？
         sign_in: ログイン
+        logout: ログアウト
         sign_in_with_provider: "%{provider}でログイン"
         sign_up: アカウント登録
       minimum_password_length:

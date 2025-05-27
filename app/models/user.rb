@@ -8,6 +8,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :profile, length: { maximum: 200 }
-  validates :zip_code, length: { maximum: 50 }
+  validates :zip_code, length: { is: 7 }, allow_blank: true
   validates :address, length: { maximum: 200 }
 end
