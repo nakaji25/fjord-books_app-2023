@@ -1,0 +1,21 @@
+<h1><%= t('views.common.title_index', name: Comment.model_name.human.downcase) %></h1>
+
+<div id="comments">
+  <% if comments.any? %>
+    <div class="index-item">
+      <% comments.each do |comment| %>
+        <div class="index-item">
+          <%= render comment %>
+        </div>
+        <p>
+          <% if current_user == comment.user %>
+            <%= link_to "Edit this comment", edit_polymorphic_path([commentable, comment]) %>
+            <%= button_to t('views.common.destroy'), polymorphic_path([commentable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+          <%end%>
+        </p>
+      <% end %>
+    </div>
+  <% else %>
+    (<%= t('.no_comments') %>)
+  <% end %>
+</div>
