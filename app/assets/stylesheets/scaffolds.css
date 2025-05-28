@@ -328,3 +328,7 @@ form input[type="submit"]:hover {
 .comment-item {
   margin-bottom: 10px;
 }
+
+#comments{
+  max-width: var(--single-column-w);
+}
