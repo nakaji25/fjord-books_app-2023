@@ -5,11 +5,11 @@
   </p>
   <p>
     <strong><%= Report.human_attribute_name(:date) %>:</strong>
-    <%= report.created_at.strftime('%Y/%m/%d') %>
+    <%= l report.created_at , format: :long %>
   </p>
   <p>
     <strong><%= Report.human_attribute_name(:user) %>:</strong>
-    <%= report.user.name %>
+    <%= link_to report.user.name_or_email, report.user %>
   </p>
   <p>
     <strong><%= Report.human_attribute_name(:content) %>:</strong>
