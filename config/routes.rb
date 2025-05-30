@@ -12,8 +12,7 @@ Rails.application.routes.draw do
       resources :comments, only: :create
     end
     resource :mentions, only: %i[create destroy]
-    get 'mentioning' => 'mentions#mentionings', as: 'mentionings'
   end
   resources :comments, only: :destroy
-  resources :users, only: %i[index show]
+  resources :users, only: %i(index show)
 end

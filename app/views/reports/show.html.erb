@@ -4,11 +4,11 @@
   <%= render @report %>
 </div>
 
-<% if @mentioned_reports.present?%>
+<% if @mentioned_reports.present? %>
   <p>
     <strong><%= Report.human_attribute_name(:reference) %>:</strong>
     <ul>
-      <%@mentioned_reports.each do |mentioned_report| %>
+      <% @mentioned_reports.each do |mentioned_report| %>
         <li><%= link_to mentioned_report.title, mentioned_report %></li>
       <% end %>
     </ul>
