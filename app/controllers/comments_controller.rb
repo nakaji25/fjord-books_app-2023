@@ -2,19 +2,16 @@
 
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[edit update destroy]
+  before_action :correct_user, only: %i[edit update destroy]
   def edit; end
 
   def create
     @comment = @commentable.comments.build(comment_params)
     @comment.user = current_user
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to report_url(@comment), notice: t('controllers.common.notice_create', name: Comment.model_name.human) }
-        format.json { render :show, status: :created, location: @comment }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
+    if @comment.save
+      redirect_to report_url(@comment), notice: t('controllers.common.notice_create', name: Comment.model_name.human)
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -40,5 +37,12 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:content)
+  end
+
+  def correct_user
+    return if @comment.user == current_user
+
+    flash[:alert] = '権限がありません。'
+    redirect_to root_url
   end
 end
