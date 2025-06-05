@@ -3,7 +3,12 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  include Devise::Test::IntegrationHelpers
+  test '#name_or_email' do
+    alice = users(:alice)
+    no_name = User.new(email: 'foo@example.com', name: '')
+    assert_not_equal 'foo', no_name.name_or_email
+    assert_equal 'foo@example.com', no_name.name_or_email
+    assert_equal 'alice', alice.name_or_email
+  end
 end
