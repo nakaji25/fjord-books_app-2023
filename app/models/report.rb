@@ -23,9 +23,9 @@ class Report < ApplicationRecord
   def create_mentions
     mentioning_relationships.destroy_all
     report_url_pattern = %r{http://localhost:3000/reports/(\d+)}
-    mentions = content.scan(report_url_pattern).flatten
+    mentions = content.scan(report_url_pattern).flatten.uniq
     mentions.each do |mentioning_id|
-      Mention.find_or_create_by!(mentioning_id: mentioning_id, mentioned_id: id)
+      Mention.create!(mentioning_id: mentioning_id, mentioned_id: id)
     end
   end
 end
