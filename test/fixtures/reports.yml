@@ -1,11 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id : 1
   user: alice
   title: '[1日目] FBCスタート'
   content: FBCスタート!
-
-# two:
-#   user: two
-#   title: MyString
-#   content: MyText
