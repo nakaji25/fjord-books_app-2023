@@ -43,13 +43,13 @@ class BooksTest < ApplicationSystemTestCase
     click_on 'この本を編集', match: :first
 
     fill_in 'タイトル', with: '独習Ruby on Rails'
-    fill_in 'メモ', with: '別のの参考書に変更しました！'
+    fill_in 'メモ', with: '別の参考書に変更しました！'
     fill_in '著者', with: '小餅 良介'
     click_on '更新する'
 
     assert_text '本が更新されました。'
     assert_text '独習Ruby on Rails'
-    assert_text '別のの参考書に変更しました！'
+    assert_text '別の参考書に変更しました！'
     assert_text '小餅 良介'
   end
 

@@ -4,8 +4,9 @@ require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
   include Devise::Test::IntegrationHelpers
+
   setup do
-    @report = reports(:one)
+    @report = reports(:alice_report)
     @alice = users(:alice)
     @bob = users(:bob)
     sign_in @alice
@@ -21,12 +22,13 @@ class ReportTest < ActiveSupport::TestCase
     assert_equal Date.current, @report.created_on
   end
 
-  test '#mentions_test' do
-    not_mention = Report.new(title: 'mention_test', content: 'hoge', user: @alice, )
-    not_mention.save
-    mention = Report.new(title: 'not_mention_test', content: 'http://localhost:3000/reports/980190963\n', user: @bob)
-    mention.save
-    assert_not_empty mention.mentioning_reports
+  test '#言及した日報が正しくmentioning_reportsに追加されるかのテスト' do
+    not_mention = Report.new(title: 'mention_test', content: 'hoge', user: @alice)
+    not_mention.save!
     assert_empty not_mention.mentioning_reports
+    mention = Report.new(title: 'not_mention_test', content: "http://localhost:3000/reports/#{@report.id}\n", user: @bob)
+    mention.save!
+    assert_not_empty mention.mentioning_reports
+    assert_equal @report.id, mention.mentioning_reports[0]['id']
   end
 end

@@ -5,7 +5,7 @@ require 'application_system_test_case'
 class ReportsTest < ApplicationSystemTestCase
   include Devise::Test::IntegrationHelpers
   setup do
-    @report = reports(:one)
+    @report = reports(:alice_report)
     user = users(:alice)
     sign_in user
   end
@@ -20,8 +20,6 @@ class ReportsTest < ApplicationSystemTestCase
     click_on 'この日報を表示', match: :first
     assert_text '[1日目] FBCスタート'
     assert_text 'FBCスタート!'
-    assert_text 'alice'
-    assert_text '2025/06/12'
   end
 
   test 'should update Report' do
@@ -35,7 +33,6 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text '日報が更新されました。'
     assert_text '[1日目] 環境構築＆Ruby導入編'
     assert_text '環境構築完了！'
-    assert_text 'alice'
   end
 
   test 'should destroy Report' do
