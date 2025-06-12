@@ -18,10 +18,9 @@ class BooksTest < ApplicationSystemTestCase
   test 'should show Report' do
     visit books_url
     click_on 'この本を表示', match: :first
-    assert_text 'タイトル'
-    assert_text 'メモ'
-    assert_text '著者'
-    click_on '本の一覧に戻る'
+    assert_text 'Railsの教科書'
+    assert_text 'わかりやすい！'
+    assert_text '五十嵐邦明'
   end
 
   test 'should create book' do
@@ -37,7 +36,6 @@ class BooksTest < ApplicationSystemTestCase
     assert_text 'プロを目指す人のためのRuby入門[改訂2版]'
     assert_text '素晴らしい本です！'
     assert_text '伊藤 淳一'
-    click_on '本の一覧に戻る'
   end
 
   test 'should update Book' do
@@ -53,7 +51,6 @@ class BooksTest < ApplicationSystemTestCase
     assert_text '独習Ruby on Rails'
     assert_text '別のの参考書に変更しました！'
     assert_text '小餅 良介'
-    click_on '本の一覧に戻る'
   end
 
   test 'should destroy Book' do

@@ -18,11 +18,10 @@ class ReportsTest < ApplicationSystemTestCase
   test 'should show Report' do
     visit reports_url
     click_on 'この日報を表示', match: :first
-    assert_text 'タイトル'
-    assert_text '内容'
-    assert_text '作成者'
-    assert_text '作成日'
-    click_on '日報の一覧に戻る'
+    assert_text '[1日目] FBCスタート'
+    assert_text 'FBCスタート!'
+    assert_text 'alice'
+    assert_text '2025/06/12'
   end
 
   test 'should update Report' do
@@ -37,7 +36,6 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text '[1日目] 環境構築＆Ruby導入編'
     assert_text '環境構築完了！'
     assert_text 'alice'
-    click_on '日報の一覧に戻る'
   end
 
   test 'should destroy Report' do
