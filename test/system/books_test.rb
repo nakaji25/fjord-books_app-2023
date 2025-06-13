@@ -13,6 +13,7 @@ class BooksTest < ApplicationSystemTestCase
   test 'visiting the index' do
     visit books_url
     assert_selector 'h1', text: '本の一覧'
+    assert_text 'Railsの教科書'
   end
 
   test 'should show Report' do
