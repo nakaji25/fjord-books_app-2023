@@ -1,0 +1,9 @@
+<h1><%= t('views.common.title_edit', name: Comment.model_name.human.downcase) %></h1>
+
+<%= render "form", commentable: @commentable, comment: @comment %>
+
+<br>
+
+<div>
+  <%= link_to t('devise.shared.links.back'), reports_path %>
+</div>

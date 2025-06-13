@@ -319,3 +319,16 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
   background-color: var(--global-primary-c-hover);
 }
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-item {
+  margin-bottom: 10px;
+}
+
+#comments{
+  max-width: var(--single-column-w);
+}

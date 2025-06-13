@@ -1,0 +1,22 @@
+<h1><%= t('views.common.title_index', name: i18n_pluralize(Comment.model_name.human.downcase)) %></h1>
+
+<div id="comments">
+  <% if comments.any? %>
+    <div class="index-item">
+      <% comments.each do |comment| %>
+        <div class="index-item comment-item">
+          <%= render comment %>
+          <% if current_user == comment.user %>
+            <br>
+            <div class="flex">
+              <%= link_to t('views.common.edit', name: Comment.model_name.human.downcase), edit_polymorphic_path([commentable, comment]) %>
+              <%= button_to t('views.common.destroy', name: Comment.model_name.human.downcase), polymorphic_path([commentable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <%= t('views.common.no_contents', name: Comment.model_name.human.downcase) %>
+  <% end %>
+</div>

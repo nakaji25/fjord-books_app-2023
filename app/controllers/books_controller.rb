@@ -9,7 +9,10 @@ class BooksController < ApplicationController
   end
 
   # GET /books/1 or /books/1.json
-  def show; end
+  def show
+    @comment = Comment.new
+    @comments = @book.comments
+  end
 
   # GET /books/new
   def new
@@ -67,5 +70,9 @@ class BooksController < ApplicationController
   # Only allow a list of trusted parameters through.
   def book_params
     params.require(:book).permit(:title, :memo, :author, :picture)
+  end
+
+  def set_commentable
+    @commentable = Book.find(params[:book_id])
   end
 end

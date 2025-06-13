@@ -1,0 +1,15 @@
+<div id="<%= dom_id comment %>">
+  <p>
+    <strong><%= Comment.human_attribute_name(:content) %>:</strong>
+    <%= comment.content %>
+  </p>
+  <p>
+    <strong><%= Comment.human_attribute_name(:date) %>:</strong>
+    <%= l comment.created_at , format: :long %>
+  </p>
+  <p>
+    <strong><%= Comment.human_attribute_name(:user) %>:</strong>
+    <%= link_to comment.user.name_or_email, comment.user %>
+  </p>
+
+</div>
