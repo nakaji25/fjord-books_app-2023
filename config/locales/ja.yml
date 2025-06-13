@@ -110,6 +110,9 @@ ja:
       too_long: は%{count}文字以内で入力してください
       too_short: は%{count}文字以上で入力してください
       wrong_length: は%{count}文字で入力してください
+      not_saved:
+        one: "1件のエラーが発生したため %{resource} は保存されませんでした。"
+        other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
     template:
       body: 次の項目を確認してください
       header: "%{model}に%{count}個のエラーが発生しました"
@@ -194,6 +197,7 @@ ja:
       title_edit: "%{name}の編集"
       error: エラー
       validation_error: "%{errors}があるため、この%{name}は保存できませんでした"
+      logout: ログアウト
     pagination:
       first: '« 最初'
       last: '最後 »'
