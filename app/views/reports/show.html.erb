@@ -4,6 +4,17 @@
   <%= render @report %>
 </div>
 
+<% if @mentioned_reports.present? %>
+  <p>
+    <strong><%= Report.human_attribute_name(:reference) %>:</strong>
+    <ul>
+      <% @mentioned_reports.each do |mentioned_report| %>
+        <li><%= link_to mentioned_report.title, mentioned_report %></li>
+      <% end %>
+    </ul>
+  </p>
+<% end %>
+
 <%= render 'shared/comments', commentable: @report %>
 
 <nav class="page-nav">
