@@ -29,6 +29,5 @@ class ReportTest < ActiveSupport::TestCase
     mention = Report.new(title: 'not_mention_test', content: "http://localhost:3000/reports/#{@report.id}\n", user: @bob)
     mention.save!
     assert_equal [@report], mention.mentioning_reports
-    assert_equal @report, mention.mentioning_reports[0]
   end
 end
