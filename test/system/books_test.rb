@@ -4,6 +4,7 @@ require 'application_system_test_case'
 
 class BooksTest < ApplicationSystemTestCase
   include Devise::Test::IntegrationHelpers
+  
   setup do
     @book = books(:rails_textbook)
     user = users(:alice)
